@@ -5,7 +5,7 @@ CasperJs Testing
 
 View the slides at:-
 
-https://cdn.rawgit.com/rippo/testing.casperjs.presentation.vscode.50mins/master/Casper.Mvc/Casper.Mvc/Slides/index.html#1
+https://cdn.rawgit.com/rippo/testing.casperjs.presentation.vscode/master/Casper.Mvc/Casper.Mvc/Slides/index.html#1
 
 To install (use node npm):-
 ````
