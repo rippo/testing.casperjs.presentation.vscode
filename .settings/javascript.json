@@ -1,0 +1,163 @@
+{
+	 "csp-pres-00-grab": {
+		"prefix": "csp-pres-00-grab",
+		"body": [
+			"var casper = require(\"casper\").create();",
+			"",
+			"casper.start(\"http://www.google.co.uk\", function () {",
+			"    this.echo(this.getTitle());",
+			"});",
+			"",
+			"casper.thenOpen(\"http://localhost:43504\", function () {",
+			"    this.echo(this.getTitle());",
+			"    this.capture(\"screen.jpg\");",
+			"});",
+			"",
+			"casper.run();"
+		],
+		"description": "Casper Presentation 00 Grab Demo"
+	},
+	
+	"csp-pres-01-first-test" : {
+		"prefix" : "csp-pres-01-first-test",
+		"body" : [
+			"casper.test.begin('Home Page Tests', 3, function (test) {",
+			"",
+			"    casper.start(\"http://localhost:43504\", function () {",
+			"        test.assertTitle(\"Home - CasperJS Mvc\");",
+			"        test.assertTextExists(\"Casper MVC\", \"Casper MVC is present on page\");",
+			"        test.assertTextExists(\"Ariya Hidayat\", \"Ariya Hidayat is present on page\");",
+			"    });",
+			"",
+			"    casper.run(function () {",
+			"        test.done();",
+			"    });",
+			"",
+			"});"
+		],
+		"description": "Casper Presentation 01 First Test"	
+	},
+	
+	"csp-pres-02-nav-test" : {
+		"prefix" : "csp-pres-02-nav-test",
+		"body" : [
+	        "casper.test.begin('Navigation test', 4, function (test) {",
+	        "",
+	        "    casper.start(\"http://localhost:43504\", function () {",
+	        "        test.assertTitle(\"Home - CasperJS Mvc\");",
+	        "        test.assertTextExists(\"Casper MVC\", \"Casper MVC is present on page\");",
+	        "    });",
+	        "",
+	        "    casper.thenClick(\"ul > li:nth-child(2) > a\", function () {",
+	        "        test.assertUrlMatch(\"/home/about\", \"URL ends with Home/About\");",
+	        "        test.assertTitle(\"About - CasperJS Mvc\");",
+	        "    });",
+	        "",
+	        "    casper.run(function () {",
+	        "        test.done();",
+	        "    });",
+	        "});"
+		],
+		"description": "Casper Presentation 02 Navigation Test"	
+	},
+	
+	"csp-pres-03-form-01" : {
+		"prefix" : "csp-pres-03-form-01",
+		"body" : [
+			"casper.test.begin(\"Contact Page\", 5, function (test) {",
+			"",
+			"    casper.start(\"http://localhost:43504/home/contact\", function () {",
+			"        test.assertTitle(\"Contact - CasperJS Mvc\", \"Page title matches 'Contact - CasperJS Mvc'\");",
+			"        test.assertExists('form[action=\"/home/contact\"]', \"Contact form found\");",
+			"",
+			"        //FILL FORM",
+			"",
+			"    });",
+			"",    
+			"    //FILL FORM WITH INVALID EMAIL",
+			"",    
+			"    //FILL FORM WITH VALID EMAIL",
+			"",
+			"    casper.waitForUrl(\"/home/thanks\", function () {",
+			"        test.assertTextExists(\"Thanks\", \"Thanks H1 header is shown\");",
+			"    }, null, 1000);",
+			"",
+			"    casper.run(function () {",
+			"        test.done();",
+			"    });",
+			"});"
+		],
+		"description" : "Casper Presentation 03 Form Test - part 01"
+	},
+	
+	"csp-pres-03-form-02" : {
+		"prefix" : "csp-pres-03-form-02",
+		"body" : [
+        	"this.fillSelectors('form', {",
+            "   \"input[name='ContactName']\": 'Richard Wilde'", 
+        	"}, true);"	
+		],
+		"description" : "Casper Presentation 03 Form Fill - part 02"
+	},
+			
+	"csp-pres-03-form-03a" : {
+		"prefix" : "csp-pres-03-form-03a",
+		"body" : [
+			"casper.waitForSelector(\"#EmailAddress\", function() {",
+			"    test.assertTextExists(\"The Email Address field is required\", \"Email required is shown\");",
+			"    this.fillSelectors(\"form\", {",
+			"       \"input[name='EmailAddress']\": 'INVALID@EMAIL'",
+			"    }, true);",
+			"});"
+		],
+		"description" : "Casper Presentation 03 Form Fill - part 03-a"
+	},
+
+	"csp-pres-03-form-03b" : {
+		"prefix" : "csp-pres-03-form-03b",
+		"body" : [
+			"casper.waitForSelector(\"#EmailAddress\", function() {",
+			"    test.assertTextExists(\"The Email Address field is not a valid e-mail address\", \"Email validation message shown\");",
+			"    this.fillSelectors(\"form\", {",
+			"       \"input[name='EmailAddress']\": 'richard@wildesoft.net'",
+			"    }, true);",
+			"});"
+		],
+		"description" : "Casper Presentation 03 Form Fill - part 03-b"
+	},
+	
+	"csp-pres-05-evaluate-01": {
+		"prefix": "csp-pres-04-evaluate-01",
+		"body": [
+			"casper.test.begin(\"Evaluate tests\", 2, function (test) {",
+			"",
+			"    casper.start(\"http://localhost:43504/evaluate\");",
+			"",
+			"    //DROP INTO DOM TO CHANGE DROPDOWN TO UK",
+			"",
+			"    //DROP INTO DOM TO CHANGE DROPDOWN TO ES",
+			"",    
+			"    casper.run(function () { test.done(); });",
+			"});"
+		],
+		"description": "Casper Presentation 04 Evaluate 01"
+	},
+
+	"csp-pres-05-evaluate-02": {
+		"prefix": "csp-pres-04-evaluate-02",
+		"body": [
+			"casper.thenEvaluate(function () {",
+			"    $(\"#CountryList\").val(\"\").change();",
+			"});",
+			"",
+			"casper.then(function () {",
+			"    test.assertTextExists(\"Selected country code: XX\", \"Selected country code: XX text exists\");",
+			"});"
+		],
+		"description": "Casper Presentation 04 Evaluate 02"
+	}
+	
+}
+
+
+

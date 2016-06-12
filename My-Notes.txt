@@ -1,0 +1,164 @@
+----------------------------------------------------
+1. DEMO 1
+----------------------------------------------------
+
+	Start IIS.BAT
+	Navigate to http://localhost:43504 and show home page ONLY
+	Create grab.js 
+	csp-pres-00-grab
+	
+	Run It
+	Show screen.jpg
+
+	On Grab Demo inside create
+
+	{ viewportSize: { width: 960, height: 600 }	}
+
+	Run it
+	Show screen.jpg
+
+	Slides
+	
+	
+	
+----------------------------------------------------
+ 2. TEST 01 - First Test
+----------------------------------------------------
+
+	Create test01.js in .\Tests\Test.Samples\test01.js
+	csp-pres-01-first-test
+
+	Run it 
+	Slides
+
+
+----------------------------------------------------
+3. Test 02 - Navigation Test
+----------------------------------------------------
+
+	Create test02.js in .\Tests\Test.Samples\test02.js
+	csp-pres-02-nav-test
+
+	Run it 
+	
+	Change code to show failures
+	Run it
+
+	Slides
+	
+	
+	
+----------------------------------------------------
+4. Test 03	- Fill in a Form
+----------------------------------------------------
+
+	Show contact form on browser
+	Create test03.js in .\Tests\Test.Samples\test03.js
+	csp-pres-03-form
+
+	Run it SEE FAILURES
+
+	Add in 
+        this.fillSelectors('form', {
+            "input[name='ContactName']": 'Richard Wilde'
+        }, true);
+	
+	Run it SEE FAILURES
+	
+	Add in to the text exists and the email address
+	csp-pres-03-form-02-a
+
+	Run it SEE FAILURES
+	
+	Add in to the text exists and the email address
+	csp-pres-03-form-02-b
+
+	Run it SEE PASSES
+
+	Slides
+	
+
+----------------------------------------------------
+5. TEST 04 - Evaluate
+----------------------------------------------------
+
+	Show Web page with evaluate
+	Create test04.js in \Tests\Test.Samples\test04.js 
+	csp-pres-04-evaluate-01
+	
+	Run it SEE FAILURES, NO tests ran!
+	
+	csp-pres-04-evaluate-02-a
+		United Kingdom
+		Change XX to UK
+	Run it SEE FAILURES, as 1/2 tests ran!
+		
+	csp-pres-04-evaluate-02
+		Spain
+		Change XX to ES
+	Run it SEE PASSES
+	
+	Change code to see a failure
+	
+	Slides
+	
+----------------------------------------------------
+6. TEST 05	- Command Line Arguments
+----------------------------------------------------
+
+	Create test05.js in \Tests\Test.Samples\test05.js 
+	csp-pres-01-first-test
+	
+	change the http://localhost to
+	casper.cli.options.baseUrl
+	
+	Run it
+	
+	Slides
+	
+	
+----------------------------------------------------
+7. Some useful pointers
+----------------------------------------------------
+
+	Run	all tests in DIR
+	Good for segmenting areas of your tests
+	
+	Xunit
+	Good for say plumbing into TeamCity
+	
+	Change test02 to have failure
+	Fail-Fast
+	
+	Slides
+	
+	
+    
+----------------------------------------------------
+13. Page Object pattern
+----------------------------------------------------
+
+	Show site for account
+	login as test1@test.com, search a then b
+	login as test2@test.com, search a
+
+	Show app.ts
+	Show Typings folder
+
+	Show pages/Page.Login.ts
+	Show test/test.login.as.unknown.ts
+	
+	run test.login.as.unknown.js
+	
+	Show pages/Page.Account.ts
+	Show test/test.login.as.test1.ts
+	Show test/test.login.as.test2.ts
+	
+	run both tests
+	
+	Benefits of @code + typescript
+	Full intelli-sense for casper functions
+	Full intelli-sense for my own code
+	
+	run all tests
+
