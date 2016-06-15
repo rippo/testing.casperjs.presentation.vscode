@@ -36,5 +36,10 @@ namespace Casper.Mvc.Controllers
         {
             return View();
         }
+
+        public ActionResult MissingResources()
+        {
+            return View();
+        }
     }
 }

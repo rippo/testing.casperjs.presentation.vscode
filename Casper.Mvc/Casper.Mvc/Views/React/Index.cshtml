@@ -1,0 +1,26 @@
+﻿@{ViewBag.Title = "React";}
+
+<div id="title"></div>
+
+<div id="content"></div>
+
+@section scripts {
+    <script src="~/Scripts/react.js"></script>
+    <script src="~/Scripts/react-dom.js"></script>
+    <script src="~/Scripts/browser.min.js"></script>
+    <script src="~/Scripts/remarkable.min.js"></script>
+    <script type="text/babel" src="~/Scripts/App/comments.jsx">
+    </script>
+
+    <script type="text/babel">
+        ReactDOM.render(
+        <div>
+            <h1>A great react title</h1>
+            <p>This is a fantastic article, a must read!</p>
+        </div>
+        ,
+        document.getElementById('title')
+        );
+    </script>
+
+}

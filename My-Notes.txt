@@ -101,7 +101,42 @@
 	Change code to see a failure
 	
 	Slides
+
+
+
+
+----------------------------------------------------
+6. TEST 05	- Timings
+----------------------------------------------------
+
+	Show web page with modal window
+	Create test04.js in \Tests\Test.Samples\test04.js 
+	csp-pres-04-timings
 	
+	Run it SEE FAILURES
+	See timings.jpg
+	
+	change 100 to 200 on wait 
+	Run it SEE PASSES
+	See timings.jpg
+	
+	change 200 to 400 on wait 
+	Run it SEE PASSES
+	See timings.jpg	
+	
+	change to 
+	casper.waitUntilVisible("#myModal", function () {
+	Run it SEE PASSES
+	See timings.jpg	
+	
+	Add in the following options
+	casper.options.viewportSize = { width: 960, height: 600 };
+	Run it SEE FAILURES
+	See timings.jpg
+	
+	Slides
+	
+
 ----------------------------------------------------
 6. TEST 05	- Command Line Arguments
 ----------------------------------------------------

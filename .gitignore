@@ -200,3 +200,6 @@ Tests/Test.Samples/screen.jpg
 Tests/Test.Samples/test09.js
 Tests/Unit.Tests/test09.js
 Tests/Test.Samples/
+Tests-Completed/*.jpg
+Tests-Completed/*.json
+Tests-Completed/*.txt

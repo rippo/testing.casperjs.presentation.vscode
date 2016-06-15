@@ -1,24 +1,18 @@
-casper.test.begin('Evaluate tests', 2, function (test) {
+casper.options.viewportSize = { width:960, height:600 }
 
-    casper.start('http://localhost:43504/evaluate');
+casper.test.begin('Timings tests', 2, function (test) {
 
-    //DROP INTO DOM TO CHANGE DROPDOWN TO UK
-    casper.thenEvaluate(function () {
-        $('#CountryList').val('United Kingdom').change();
-    });
-    
+    casper.start('http://localhost:43504/timings');
+
     casper.then(function () {
-        test.assertTextExists("Selected country code: UK", "Selected country code: UK text exists");
+        test.assertExists("button#btnModal", "Launch button is shown");
+        this.click("button#btnModal");
     });
 
-    //DROP INTO DOM TO CHANGE DROPDOWN TO ES
-    casper.thenEvaluate(function () {
-        $('#CountryList').val('Spain').change();
+    casper.waitUntilVisible("#myModal", function () {
+        this.capture("timings.jpg");
+        test.assertVisible("#myModal");
     });
-    
-    casper.then(function () {
-        test.assertTextExists("Selected country code: ES", "Selected country code: ES text exists");
-    });
-    
+
     casper.run(function () { test.done(); });
 });

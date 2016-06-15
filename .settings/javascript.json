@@ -1,5 +1,5 @@
 {
-	 "csp-pres-00-grab": {
+	"csp-pres-00-grab": {
 		"prefix": "csp-pres-00-grab",
 		"body": [
 			"var casper = require(\"casper\").create();",
@@ -17,10 +17,9 @@
 		],
 		"description": "Casper Presentation 00 Grab Demo"
 	},
-	
-	"csp-pres-01-first-test" : {
-		"prefix" : "csp-pres-01-first-test",
-		"body" : [
+	"csp-pres-01-first-test": {
+		"prefix": "csp-pres-01-first-test",
+		"body": [
 			"casper.test.begin('Home Page Tests', 3, function (test) {",
 			"",
 			"    casper.start(\"http://localhost:43504\", function () {",
@@ -35,35 +34,33 @@
 			"",
 			"});"
 		],
-		"description": "Casper Presentation 01 First Test"	
+		"description": "Casper Presentation 01 First Test"
 	},
-	
-	"csp-pres-02-nav-test" : {
-		"prefix" : "csp-pres-02-nav-test",
-		"body" : [
-	        "casper.test.begin('Navigation test', 4, function (test) {",
-	        "",
-	        "    casper.start(\"http://localhost:43504\", function () {",
-	        "        test.assertTitle(\"Home - CasperJS Mvc\");",
-	        "        test.assertTextExists(\"Casper MVC\", \"Casper MVC is present on page\");",
-	        "    });",
-	        "",
-	        "    casper.thenClick(\"ul > li:nth-child(2) > a\", function () {",
-	        "        test.assertUrlMatch(\"/home/about\", \"URL ends with Home/About\");",
-	        "        test.assertTitle(\"About - CasperJS Mvc\");",
-	        "    });",
-	        "",
-	        "    casper.run(function () {",
-	        "        test.done();",
-	        "    });",
-	        "});"
+	"csp-pres-02-nav-test": {
+		"prefix": "csp-pres-02-nav-test",
+		"body": [
+			"casper.test.begin('Navigation test', 4, function (test) {",
+			"",
+			"    casper.start(\"http://localhost:43504\", function () {",
+			"        test.assertTitle(\"Home - CasperJS Mvc\");",
+			"        test.assertTextExists(\"Casper MVC\", \"Casper MVC is present on page\");",
+			"    });",
+			"",
+			"    casper.thenClick(\"ul > li:nth-child(2) > a\", function () {",
+			"        test.assertUrlMatch(\"/home/about\", \"URL ends with Home/About\");",
+			"        test.assertTitle(\"About - CasperJS Mvc\");",
+			"    });",
+			"",
+			"    casper.run(function () {",
+			"        test.done();",
+			"    });",
+			"});"
 		],
-		"description": "Casper Presentation 02 Navigation Test"	
+		"description": "Casper Presentation 02 Navigation Test"
 	},
-	
-	"csp-pres-03-form-01" : {
-		"prefix" : "csp-pres-03-form-01",
-		"body" : [
+	"csp-pres-03-form-01": {
+		"prefix": "csp-pres-03-form-01",
+		"body": [
 			"casper.test.begin(\"Contact Page\", 5, function (test) {",
 			"",
 			"    casper.start(\"http://localhost:43504/home/contact\", function () {",
@@ -73,9 +70,9 @@
 			"        //FILL FORM",
 			"",
 			"    });",
-			"",    
+			"",
 			"    //FILL FORM WITH INVALID EMAIL",
-			"",    
+			"",
 			"    //FILL FORM WITH VALID EMAIL",
 			"",
 			"    casper.waitForUrl(\"/home/thanks\", function () {",
@@ -87,22 +84,20 @@
 			"    });",
 			"});"
 		],
-		"description" : "Casper Presentation 03 Form Test - part 01"
+		"description": "Casper Presentation 03 Form Test - part 01"
 	},
-	
-	"csp-pres-03-form-02" : {
-		"prefix" : "csp-pres-03-form-02",
-		"body" : [
-        	"this.fillSelectors('form', {",
-            "   \"input[name='ContactName']\": 'Richard Wilde'", 
-        	"}, true);"	
+	"csp-pres-03-form-02": {
+		"prefix": "csp-pres-03-form-02",
+		"body": [
+			"this.fillSelectors('form', {",
+			"   \"input[name='ContactName']\": 'Richard Wilde'",
+			"}, true);"
 		],
-		"description" : "Casper Presentation 03 Form Fill - part 02"
+		"description": "Casper Presentation 03 Form Fill - part 02"
 	},
-			
-	"csp-pres-03-form-03a" : {
-		"prefix" : "csp-pres-03-form-03a",
-		"body" : [
+	"csp-pres-03-form-03a": {
+		"prefix": "csp-pres-03-form-03a",
+		"body": [
 			"casper.waitForSelector(\"#EmailAddress\", function() {",
 			"    test.assertTextExists(\"The Email Address field is required\", \"Email required is shown\");",
 			"    this.fillSelectors(\"form\", {",
@@ -110,12 +105,11 @@
 			"    }, true);",
 			"});"
 		],
-		"description" : "Casper Presentation 03 Form Fill - part 03-a"
+		"description": "Casper Presentation 03 Form Fill - part 03-a"
 	},
-
-	"csp-pres-03-form-03b" : {
-		"prefix" : "csp-pres-03-form-03b",
-		"body" : [
+	"csp-pres-03-form-03b": {
+		"prefix": "csp-pres-03-form-03b",
+		"body": [
 			"casper.waitForSelector(\"#EmailAddress\", function() {",
 			"    test.assertTextExists(\"The Email Address field is not a valid e-mail address\", \"Email validation message shown\");",
 			"    this.fillSelectors(\"form\", {",
@@ -123,10 +117,9 @@
 			"    }, true);",
 			"});"
 		],
-		"description" : "Casper Presentation 03 Form Fill - part 03-b"
+		"description": "Casper Presentation 03 Form Fill - part 03-b"
 	},
-	
-	"csp-pres-05-evaluate-01": {
+	"csp-pres-04-evaluate-01": {
 		"prefix": "csp-pres-04-evaluate-01",
 		"body": [
 			"casper.test.begin(\"Evaluate tests\", 2, function (test) {",
@@ -136,14 +129,13 @@
 			"    //DROP INTO DOM TO CHANGE DROPDOWN TO UK",
 			"",
 			"    //DROP INTO DOM TO CHANGE DROPDOWN TO ES",
-			"",    
+			"",
 			"    casper.run(function () { test.done(); });",
 			"});"
 		],
 		"description": "Casper Presentation 04 Evaluate 01"
 	},
-
-	"csp-pres-05-evaluate-02": {
+	"csp-pres-04-evaluate-02": {
 		"prefix": "csp-pres-04-evaluate-02",
 		"body": [
 			"casper.thenEvaluate(function () {",
@@ -155,9 +147,227 @@
 			"});"
 		],
 		"description": "Casper Presentation 04 Evaluate 02"
+	},
+	"csp-pres-05-timings": {
+		"prefix": "csp-pres-05-timings",
+		"body": [
+			"casper.options.viewportSize = { width:960, height:600 }",
+			"",
+			"casper.test.begin('Timings tests', 2, function (test) {",
+			"",
+			"	casper.start('http://localhost:43504/timings');",
+			"",
+			"	casper.then(function () {",
+			"		test.assertExists(\"button#btnModal\", \"Launch button is shown\");",
+			"		this.click(\"button#btnModal\");",
+			"	});",
+			"",
+			"	casper.wait(100, function () {",
+			"		this.capture(\"timings.jpg\");",
+			"		test.assertVisible(\"#myModal\");",
+			"	});",
+			"",
+			"	casper.run(function () { test.done(); });",
+			"});"
+		],
+		"description": "Casper Presentation 05 Timings"
+	},
+	"csp-pres-06-react": {
+		"prefix": "csp-pres-06-react",
+		"body": [
+			"casper.test.begin('React tests', 3, function (test) {",
+			"",
+			"    casper.start('http://localhost:43504/react', function () {",
+			"        test.assertTitle('React - CasperJS Mvc');",
+			"    });",
+			"",
+			"    casper.then(function () {",
+			"        test.assertTextExists('A great react title', 'The title exists');",
+			"    });",
+			"",
+			"    casper.then(function() {",
+			"        test.assertElementCount('.commentList > .comment > h2', 2, '2 comments have been found');",
+			"    });",
+			"",
+			"    casper.run(function () {",
+			"        test.done();",
+			"    });",
+			"});"
+		],
+		"description": "Casper Presentation 06 React"
+	},
+	"csp-pres-08-events-01": {
+		"prefix": "csp-pres-08-events-01",
+		"body": [
+			"casper.test.begin('Events - Listeners', function (test) {",
+			"",
+			"    casper.start(casper.cli.options.baseUrl, function () {",
+			"        test.assertTitle('Home - CasperJS Mvc', 'Page title is correct');",
+			"        test.assertTextExists('Ariya Hidayat', 'Ariya Hidayat is present on page');",
+			"    });",
+			"",
+			"    casper.run(function () {",
+			"        test.done();",
+			"",
+			"        //require('utils').dump(successes);",
+			"",
+			"        successes.forEach(function(item){",
+			"            casper.echo(item.message);",
+			"        });",
+			"    });",
+			"",
+			"    var successes = [];",
+			"",
+			"    casper.test.on('success', function(success) {",
+			"        successes.push(success);",
+			"    });",
+			"});"
+		],
+		"description": "Casper Presentation 08 Events 01"
+	},
+	"csp-pres-08-events-02": {
+		"prefix": "csp-pres-08-events-02",
+		"body": [
+			"//Writing successes/failures out to disk",
+			"casper.test.begin('Events - Listeners', 2, function (test) {",
+			"",
+			"    casper.start(casper.cli.options.baseUrl, function () {",
+			"        test.assertTitle('Home - CasperJS Mvc', ' - The page title is correct');",
+			"        test.assertTextExists('Ariya Hidayat', ' - Ariya Hidayat is present on page');",
+			"    });",
+			"",
+			"    casper.run(function () {",
+			"        test.done();",
+			"",
+			"        var output = 'When looking at the home page\\n';",
+			"",
+			"        output += 'The following passed:-\\n';",
+			"        successes.forEach(function(item){",
+			"            output += item.message + '\\n';",
+			"        });",
+			"",
+			"        output += 'The following failed:-\\n';",
+			"        failures.forEach(function(item){",
+			"            output += item.message + '\\n';",
+			"        });",
+			"",
+			"        //save file",
+			"        require('fs').write('home.txt', output, 'w' );",
+			"",
+			"        casper.echo('Created file home.txt', 'DEBUG');",
+			"    });",
+			"",
+			"    var successes = [];",
+			"    casper.test.on('success', function(success) {",
+			"        successes.push(success);",
+			"    });",
+			"",
+			"    var failures = [];",
+			"    casper.test.on('fail', function(failure) {",
+			"        failures.push(failure);",
+			"    });",
+			"});"
+		],
+		"description": "Casper Presentation 08 Events 02"
+	},
+	"csp-pres-08-events-03": {
+		"prefix": "csp-pres-08-events-03",
+		"body": [
+			"var failures404 = [];",
+			"",
+			"casper.test.begin('Missing resources', 1, {",
+			"",
+			"    setUp: function () {",
+			"        // Attach the resource listener",
+			"        casper.on('resource.received', this.onResourceReceived);",
+			"    },",
+			"",
+			"    tearDown: function () {",
+			"        // Remove the resource listener",
+			"        casper.removeListener('resource.received', this.onResourceReceived);",
+			"    },",
+			"",
+			"    test: function (test) {",
+			"        casper.start(casper.cli.options.baseUrl + '/home/missingresources', function () {",
+			"            test.assertTextExists('Missing Images', 'Missing Images is present on page');",
+			"        });",
+			"",
+			"        casper.run(function () {",
+			"            failures404.forEach(function (item) {",
+			"                //doThrow: false, don't stop on first failure",
+			"                test.fail(item, { doThrow: false });",
+			"            });",
+			"",
+			"            test.done();",
+			"        });",
+			"    },",
+			"",
+			"    onResourceReceived: function (resource) {",
+			"        if (resource.stage === 'end' && resource.status === 404) {",
+			"            //require('utils').dump(resource);",
+			"            failures404.push('404 for ' + resource.url);",
+			"        }",
+			"    }",
+			"});"
+		],
+		"description": "Casper Presentation 08 Events 03"
+	},
+	"csp-pres-09-global-screen-grabs": {
+		"prefix": "csp-pres-09-global-screen-grabs",
+		"body": [
+			"//Screen grabs on failures",
+			"casper.test.begin('Screen grabs', 4, function (test) {",
+			"",
+			"    casper.start(casper.cli.options.baseUrl + '/home/contact', function () {",
+			"        test.assertTextExists('Contact Us', 'Contact us is present on page');",
+			"        //FILL FORM",
+			"        this.fillSelectors('form', {",
+			"            'input[name=\"ContactName\"]': 'Richard Wilde'",
+			"        }, true);",
+			"",
+			"    });",
+			"",
+			"    //FILL FORM WITH INVALID EMAIL",
+			"    casper.waitForSelector('#EmailAddress', function() {",
+			"        test.assertTextExists('The Email Address field is required', 'Email required is shown');",
+			"        this.fillSelectors('form', {",
+			"           'input[name=\"EmailAddress\"]': 'INVALID@EMAIL'",
+			"        }, true);",
+			"    });",
+			"",
+			"    //FILL FORM WITH VALID EMAIL",
+			"    casper.waitForSelector('#EmailAddress', function() {",
+			"        test.assertTextExists('The Email Address field is not a valid e-mail address', 'Email validation message shown');",
+			"        this.fillSelectors('form', {",
+			"           'input[name=\"EmailAddress\"]': 'richard@wildesoft.net'",
+			"        }, true);",
+			"    });",
+			"",
+			"    casper.waitForUrl('/home/thanks', function () {",
+			"        test.assertTextExists('Thanks', 'Thanks H1 header is shown');",
+			"    }, null, 1000);",
+			"",
+			"    casper.run(function () {",
+			"        test.done();",
+			"    });",
+			"",
+			"    var failures = [];",
+			"    casper.test.on('fail', function(failure) {",
+			"        //require('utils').dump(failure);",
+			"        var file = 'FAILED-' + failure.message.cleanup() + '.jpg';",
+			"        casper.capture(file);",
+			"    });",
+			"});",
+			"",
+			"String.prototype.cleanup = function() {",
+			"    return this",
+			"        .toLowerCase()",
+			"        .replace(/[^A-Za-z\\s]+/g, ' ')",
+			"        .replace(/  /g , ' ')",
+			"        .trim()",
+			"        .replace(/ /g, '-');",
+			"}"
+		],
+		"description": "Casper Presentation 09 Global Screen Grabs"
 	}
-	
 }
-
-
-

@@ -1,24 +1,36 @@
-casper.test.begin('Events - Listeners', function (test) {
+var failures404 = [];
 
-    casper.start(casper.cli.options.baseUrl, function () {
-        test.assertTitle("Home - CasperJS Mvc", "Page title is correct");
-        test.assertTextExists("Ariya Hidayat", "Ariya Hidayat is present on page");
-    });
+casper.test.begin('Missing resources', 1, {
 
-    casper.run(function () {
-        test.done();
-        
-        //require('utils').dump(successes);
-        
-        successes.forEach(function(item){
-            casper.echo(item.standard);
+    setUp: function () {
+        // Attach the resource listener
+        casper.on('resource.received', this.onResourceReceived);
+    },
+
+    tearDown: function () {
+        // Remove the resource listener
+        casper.removeListener('resource.received', this.onResourceReceived);
+    },
+
+    test: function (test) {
+        casper.start(casper.cli.options.baseUrl + '/home/missingresources', function () {
+            test.assertTextExists('Missing Images', 'Missing Images is present on page');
         });
-    });
 
-    var successes = [];
+        casper.run(function () {
+            failures404.forEach(function (item) {
+                //doThrow: false, don't stop on first failure
+                test.fail(item, { doThrow: false });
+            });
 
-    casper.test.on("success", function(success) {
-        successes.push(success);
-    });
-    
+            test.done();
+        });
+    },
+
+    onResourceReceived: function (resource) {
+        if (resource.stage === 'end' && resource.status === 404) {
+            //require('utils').dump(resource);
+            failures404.push('404 for ' + resource.url);
+        }
+    }
 });
