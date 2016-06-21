@@ -22,7 +22,7 @@ casper.test.begin('Screen grabs', 4, function (test) {
     casper.waitForSelector('#EmailAddress', function() {
         test.assertTextExists('The Email Address field is not a valid e-mail address', 'Email validation message shown');
         this.fillSelectors('form', {
-           //'input[name="EmailAddress"]': 'richard@wildesoft.net'
+           'input[name="EmailAddress"]': 'richard@wildesoft.net'
         }, true);
     });
 

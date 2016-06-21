@@ -1,0 +1,25 @@
+{
+  "name": "testing.casperjs.presentation.vscode",
+  "version": "1.0.0",
+  "description": "CasperJs Testing\r ================",
+  "main": "GruntFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rippo@github.com/rippo/testing.casperjs.presentation.vscode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rippo/testing.casperjs.presentation.vscode/issues"
+  },
+  "homepage": "https://github.com/rippo/testing.casperjs.presentation.vscode#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-open": "^0.2.3",
+    "grunt-reload": "^0.2.0"
+  }
+}

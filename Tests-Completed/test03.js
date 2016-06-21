@@ -8,22 +8,20 @@ casper.test.begin("Contact Page", 5, function (test) {
         this.fillSelectors('form', {
             "input[name='ContactName']": 'Richard Wilde'
         }, true);
-
     });
 
     //FILL FORM WITH INVALID EMAIL
-    casper.waitForSelector("#EmailAddress", function() {
+    casper.waitForSelector("#EmailAddress", function () {
         test.assertTextExists("The Email Address field is required", "Email required is shown");
         this.fillSelectors("form", {
-           "input[name='EmailAddress']": 'INVALID@EMAIL'
+            "input[name='EmailAddress']": 'INVALID@EMAIL'
         }, true);
     });
-
     //FILL FORM WITH VALID EMAIL
-    casper.waitForSelector("#EmailAddress", function() {
+    casper.waitForSelector("#EmailAddress", function () {
         test.assertTextExists("The Email Address field is not a valid e-mail address", "Email validation message shown");
         this.fillSelectors("form", {
-           "input[name='EmailAddress']": 'richard@wildesoft.net'
+            "input[name='EmailAddress']": 'richard@wildesoft.net'
         }, true);
     });
 
