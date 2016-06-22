@@ -151,7 +151,7 @@
 	"csp-pres-05-timings": {
 		"prefix": "csp-pres-05-timings",
 		"body": [
-			"casper.options.viewportSize = { width:960, height:600 }",
+			"casper.options.viewportSize = { width:1020, height:600 }",
 			"",
 			"casper.test.begin('Timings tests', 2, function (test) {",
 			"",
@@ -301,7 +301,6 @@
 			"        //save file",
 			"        require('fs').write('../../index.html', output, 'w' );",
 			"",
-			"        casper.echo('Created file home.txt', 'DEBUG');",
 			"    });",
 			"",
 			"    var successes = [];",
@@ -409,7 +408,7 @@
 			"String.prototype.cleanup = function() {",
 			"    return this",
 			"        .toLowerCase()",
-			"        .replace(/[^A-Za-z\\s]+/g, ' ')",
+			"        .replace(/[^A-Za-z0-9\\s]+/g, ' ')",
 			"        .replace(/  /g , ' ')",
 			"        .trim()",
 			"        .replace(/ /g, '-');",
@@ -418,7 +417,7 @@
 		"description": "Casper Presentation 09 Global Screen Grabs"
 	},
 	"csp-pres-10-unit-test": {
-		"prefix": "casp-pres-10-unit-test",
+		"prefix": "csp-pres-10-unit-test",
 		"body": [
 			"//casperjs test --includes=../../casper.mvc/casper.mvc/scripts/calculator.js test10.js",
 			"",
@@ -434,4 +433,4 @@
 		],
 		"description": "Casper presentation 10 Unit test"
 	}
-}
+}s

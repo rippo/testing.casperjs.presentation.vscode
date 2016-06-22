@@ -245,7 +245,17 @@ casper.cli.options.baseUrl
     casper.test.on("success", function(success) {
         successes.push(success);
     });
+````    
+````JavaScript
+    casper.on('fail', ...
+    casper.on('resource.received', ...
+    casper.on("resource.requested", ...
+    casper.on("resource.error", ...
+    casper.on("page.error", ...
 ````
+
+and many, many more see http://docs.casperjs.org/en/latest/events-filters.html
+
 
 ---
 
