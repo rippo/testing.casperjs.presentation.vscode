@@ -299,7 +299,7 @@
 			"        output += '</ul></body></html>';",
 			"",
 			"        //save file",
-			"        require('fs').write('../../index.html', output, 'w' );",
+			"        require('fs').write('../../watch/index.html', output, 'w' );",
 			"",
 			"    });",
 			"",

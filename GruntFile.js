@@ -5,7 +5,8 @@ module.exports = function (grunt) {
         express: {
             all: {
                 options: {
-                    bases: ['d:\\Projects\\Presentations\\testing.casperjs.presentation.vscode'],
+                    //bases: ['d:\\Projects\\Presentations\\testing.casperjs.presentation.vscode'],
+                    bases: ['D:\\projects\\testing.casperjs.presentation.vscode\\watch'],
                     port: 8080,
                     hostname: "0.0.0.0",
                     livereload: true

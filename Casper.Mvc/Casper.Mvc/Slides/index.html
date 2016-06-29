@@ -199,6 +199,9 @@ test.assertExists("button#btnModal", "Launch button is shown");
 // lets wait for some milliseconds...
 casper.wait(10, ...
 
+// wait until visible
+casper.waitUntilVisible('#myModal', ...)
+
 // is a selector visible?
 test.assertVisible("#myModal");
 ````
