@@ -9,7 +9,7 @@ casper.test.begin('Scenario: When I try to login as an unknown user', 12, functi
     loginPage.startOnLoginPage();
     loginPage.checkWeAreOnTheLoginPage();
 
-    //in effect submit a blank form
+    //in effect submit  a blank form
     loginPage.submitForm();
     loginPage.checkUsernameValidationIsShown();
     loginPage.checkPasswordValidationIsShown();
