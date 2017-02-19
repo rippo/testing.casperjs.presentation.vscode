@@ -39,22 +39,24 @@
 	"csp-pres-02-nav-test": {
 		"prefix": "csp-pres-02-nav-test",
 		"body": [
-			"casper.test.begin('Navigation test', 4, function (test) {",
+			"casper.options.viewportSize = { width:768, height:600 }",
 			"",
-			"    casper.start(\"http://localhost:43504\", function () {",
-			"        test.assertTitle(\"Home - CasperJS Mvc\");",
-			"        test.assertTextExists(\"Casper MVC\", \"Casper MVC is present on page\");",
-			"    });",
-			"",
-			"    casper.thenClick(\"ul > li:nth-child(2) > a\", function () {",
-			"        test.assertUrlMatch(\"/home/about\", \"URL ends with Home/About\");",
-			"        test.assertTitle(\"About - CasperJS Mvc\");",
-			"    });",
-			"",
-			"    casper.run(function () {",
-			"        test.done();",
-			"    });",
-			"});"
+	        "casper.test.begin('Navigation test', 4, function (test) {",
+	        "",
+	        "    casper.start(\"http://localhost:43504\", function () {",
+	        "        test.assertTitle(\"Home - CasperJS Mvc\");",
+	        "        test.assertTextExists(\"Casper MVC\", \"Casper MVC is present on page\");",
+	        "    });",
+	        "",
+	        "    casper.thenClick(\"ul > li:nth-child(2) > a\", function () {",
+	        "        test.assertUrlMatch(\"/home/about\", \"URL ends with Home/About\");",
+	        "        test.assertTitle(\"About - CasperJS Mvc\");",
+	        "    });",
+	        "",
+	        "    casper.run(function () {",
+	        "        test.done();",
+	        "    });",
+	        "});"
 		],
 		"description": "Casper Presentation 02 Navigation Test"
 	},
@@ -70,14 +72,16 @@
 			"        //FILL FORM",
 			"",
 			"    });",
-			"",
+			"",    
 			"    //FILL FORM WITH INVALID EMAIL",
-			"",
+			"",    
 			"    //FILL FORM WITH VALID EMAIL",
 			"",
 			"    casper.waitForUrl(\"/home/thanks\", function () {",
 			"        test.assertTextExists(\"Thanks\", \"Thanks H1 header is shown\");",
-			"    }, null, 1000);",
+			"    }, function() {",
+			"	   this.capture('fail.jpg');",
+			"    }, 1000);",
 			"",
 			"    casper.run(function () {",
 			"        test.done();",
@@ -89,9 +93,9 @@
 	"csp-pres-03-form-02": {
 		"prefix": "csp-pres-03-form-02",
 		"body": [
-			"this.fillSelectors('form', {",
-			"   \"input[name='ContactName']\": 'Richard Wilde'",
-			"}, true);"
+        	"this.fillSelectors('form', {",
+            "   \"input[name='ContactName']\": 'Richard Wilde'", 
+        	"}, true);"	
 		],
 		"description": "Casper Presentation 03 Form Fill - part 02"
 	},
@@ -129,7 +133,7 @@
 			"    //DROP INTO DOM TO CHANGE DROPDOWN TO UK",
 			"",
 			"    //DROP INTO DOM TO CHANGE DROPDOWN TO ES",
-			"",
+			"",    
 			"    casper.run(function () { test.done(); });",
 			"});"
 		],
@@ -316,8 +320,8 @@
 		],
 		"description": "Casper Presentation 08 Events 03"
 	},
-	"csp-pres-08-events-04": {
-		"prefix": "csp-pres-08-events-04",
+	"csp-pres-09-missing-resources": {
+		"prefix": "csp-pres-09-missing-resources",
 		"body": [
 			"var failures404 = [];",
 			"",
@@ -356,10 +360,10 @@
 			"    }",
 			"});"
 		],
-		"description": "Casper Presentation 08 Events 04"
+		"description": "Casper Presentation 09 Missing Resources"
 	},
-	"csp-pres-09-global-screen-grabs": {
-		"prefix": "csp-pres-09-global-screen-grabs",
+	"csp-pres-10-global-screen-grabs": {
+		"prefix": "csp-pres-10-global-screen-grabs",
 		"body": [
 			"//Screen grabs on failures",
 			"casper.test.begin('Screen grabs', 4, function (test) {",
@@ -414,10 +418,10 @@
 			"        .replace(/ /g, '-');",
 			"}"
 		],
-		"description": "Casper Presentation 09 Global Screen Grabs"
+		"description": "Casper Presentation 10 Global Screen Grabs"
 	},
-	"csp-pres-10-unit-test": {
-		"prefix": "csp-pres-10-unit-test",
+	"csp-pres-11-unit-test": {
+		"prefix": "csp-pres-11-unit-test",
 		"body": [
 			"//casperjs test --includes=../../casper.mvc/casper.mvc/scripts/calculator.js test10.js",
 			"",
@@ -431,6 +435,6 @@
 			"    test.done();",
 			"});"
 		],
-		"description": "Casper presentation 10 Unit test"
+		"description": "Casper presentation 11 Unit test"
 	}
-}s
+}

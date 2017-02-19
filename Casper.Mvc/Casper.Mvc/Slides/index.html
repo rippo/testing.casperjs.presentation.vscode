@@ -238,7 +238,7 @@ casper.waitUntilVisible('.comment', function() {
 
 #### Spoiler alert...
 ````DOS
-$ casperjs test --baseUrl=http://localhost:43504 test07.js
+$ casperjs test --baseUrl="http://localhost:43504" test07.js
 ````
 
 ````JavaScript
@@ -270,7 +270,24 @@ and many, many more see http://docs.casperjs.org/en/latest/events-filters.html
 
 ---
 
-#Test 09 - Failed screen grabs
+#Test 09 - Missing resources
+        
+##Demo        
+    
+#### Spoiler alert...
+````JavaScript
+    onResourceReceived: function (resource) {
+        if (resource.stage === 'end' && resource.status === 404) {
+            //require('utils').dump(resource);
+            failures404.push('404 for ' + resource.url);
+        }
+    }
+````        
+
+
+---
+
+#Test 10 - Failed screen grabs
         
 ##Demo        
     
@@ -283,10 +300,10 @@ casper.test.on('fail', function(failure) {
 ````        
 
 ---
-#Test 10 - Unit Testing
+#Test 11 - Unit Testing
 
 ````DOS
-$ casperjs test --includes=../../casper.mvc/casper.mvc/scripts/calculator.js test10.js
+$ casperjs test --includes=../../casper.mvc/casper.mvc/scripts/calculator.js test11.js
 ````
 
 #### Spoiler alert...

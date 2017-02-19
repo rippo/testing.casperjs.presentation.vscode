@@ -10,7 +10,7 @@ casper.test.begin('Scenario: When I login as user test1@test.com and perform an 
 
     searchPage.checkWeAreOnTheSearchPage();
     searchPage.submitForm();
-    searchPage.checkValidationMesaageIsShown();
+    searchPage.checkValidationMessageIsShown();
     
     searchPage.fillInTheSearchBox("a");
     searchPage.submitForm();
